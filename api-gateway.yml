@@ -6,14 +6,17 @@ spring:
     name: api-gateway
 
   cloud:
-    config:
-      import: optional:configserver:http://localhost:8888   # Import du Config Server
     gateway:
       routes:
         - id: user-service
           uri: lb://user-service
           predicates:
             - Path=/users/**
+        - id: book-service
+          uri: lb://book-service
+          predicates:
+            - Path=/books/**
+
 
 eureka:
   client:
