@@ -12,5 +12,14 @@ spring:
       ddl-auto: update
     show-sql: true
 
+eureka:
+  client:
+    register-with-eureka: true       # pour s’enregistrer
+    fetch-registry: true             # pour récuperer la liste des services
+    service-url:
+      defaultZone: http://localhost:8761/eureka   # URL du serveur Eureka
+  instance:
+    prefer-ip-address: true          # affichage par IP au lieu du hostname
+
 custom:
   message: "Hello from Book Service Config 📚"
