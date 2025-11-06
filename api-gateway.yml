@@ -5,18 +5,6 @@ spring:
   application:
     name: api-gateway
 
-  cloud:
-    gateway:
-      routes:
-        - id: user-service
-          uri: http://localhost:8081
-          predicates:
-            - Path=/user-service/**
-        - id: book-service
-          uri: http://localhost:8082
-          predicates:
-            - Path=/book-service/**
-
 
 eureka:
   client:
