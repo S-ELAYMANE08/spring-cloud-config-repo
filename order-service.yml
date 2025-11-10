@@ -6,7 +6,7 @@ spring:
     name: book-service
 
   config:
-    import: "optional:configserver:http://localhost:8082"
+    import: "optional:configserver:http://localhost:8083"
   datasource:
     url: jdbc:mysql://localhost:3306/orderdb
     username: root
