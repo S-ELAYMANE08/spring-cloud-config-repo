@@ -33,4 +33,4 @@ eureka:
     fetch-registry: true
 
 custom:
-  message: "Hello from Book Service Config 📚"
+  message: "Hello from Book Service Config "
