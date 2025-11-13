@@ -1,4 +1,3 @@
-
 server:
   port: 8080
 
@@ -8,45 +7,31 @@ spring:
   cloud:
     config:
       enabled: false
-    
-
     gateway:
       globalcors:
         corsConfigurations:
-          "/**": # Configuration des règles CORS
+          "/**":
             allowedOrigins: "http://localhost:3000"
             allowedHeaders: "*"
             allowedMethods: "*"
             allowCredentials: true
-
       routes:
         - id: user-service
           uri: lb://USER-SERVICE
           predicates:
             - Path=/user/**
-
         - id: book-service
           uri: lb://BOOK-SERVICE
           predicates:
             - Path=/books/**
-
         - id: order-service
           uri: lb://ORDER-SERVICE
           predicates:
             - Path=/orders/**
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info
-  endpoint:
-    health:
-      show-details: always
 eureka:
   client:
     service-url:
       defaultZone: http://discovery-service:8761/eureka/
   instance:
     preferIpAddress: false
-    hostname: ${spring.application.name}
