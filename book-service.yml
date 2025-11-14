@@ -2,10 +2,6 @@ server:
   port: 8082
 
 spring:
-  application:
-    name: book-service
-  config:
-    import: "optional:http://config-service:8888"
   datasource:
     url: jdbc:mysql://mysql-book:3306/bookdb
     username: root

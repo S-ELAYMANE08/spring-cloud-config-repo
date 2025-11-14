@@ -2,10 +2,6 @@ server:
   port: 8081
 
 spring:
-  application:
-    name: user-service
-  config:
-    import: "optional:http://config-service:8888"
   datasource:
     url: jdbc:mysql://mysql-user:3306/userdb
     username: root
