@@ -8,6 +8,14 @@ spring:
   config:
     import: "optional:configserver:http://config-service:8888"
 
+  cloud:
+    config:
+      retry:
+        max-attempts: 6        # nombre maximum de tentatives
+        initial-interval: 2000 # intervalle initial en ms
+        multiplier: 1.5        # facteur multiplicatif pour l’intervalle
+        max-interval: 10000
+
   datasource:
     url: jdbc:mysql://mysql-user:3306/userdb
     username: root
